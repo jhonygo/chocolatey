@@ -4,7 +4,7 @@ Chocolatey offline installation (c:\dev\Chocolatey)
 ### Tools needed : FolderChangesView (choco package), MSI2XML/XML2MSI (choco package), insted (choco package)
 
 ### Chocolatey
-C:\ProgramData\chocolatey\config\chocolatey.config
+Config file : C:\ProgramData\chocolatey\config\chocolatey.config  
   <sources>
     <source id="test" value="" disabled="false" priority="0" />
   </sources>
