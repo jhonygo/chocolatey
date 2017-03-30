@@ -2,22 +2,35 @@ CHOCOLATEY CUSTOMISATION
 ------------------------
   
 Chocolatey offline installation scripts and configuration (c:\dev\Chocolatey)  
+Tools needed : FolderChangesView (choco package), MSI2XML/XML2MSI (choco package), insted (choco package)  
   
-### Tools needed : FolderChangesView (choco package), MSI2XML/XML2MSI (choco package), insted (choco package)  
-  
-### Chocolatey  
-Config file : C:\ProgramData\chocolatey\config\chocolatey.config  
+#### Chocolatey  
+- Config file : C:\ProgramData\chocolatey\config\chocolatey.config  
+- Content : 
 
+```xml  
   <sources>  
     <source id="test" value="" disabled="false" priority="0" />  
   </sources>  
-  
+```  
+
+- Commands to add/remove source :  
+
+```  
 choco source add --name test  
 choco source remove --name test  
+```  
   
-### chocolateyGUI  
-Config file : C:\Users\sguclu\AppData\Local\Chocolatey\ChocolateyGui.exe_Url_oqqrttjgsgsfj3psms1wjw4lcyeoz1us\0.13.2.0\user.config  
+#### ChocolateyGUI  
+- Config file : 
 
+```
+C:\Users\sguclu\AppData\Local\Chocolatey\ChocolateyGui.exe_Url_oqqrttjgsgsfj3psms1wjw4lcyeoz1us\0.13.2.0\user.config
+```
+
+- Content :     
+
+```xml  
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
     <userSettings>
@@ -34,3 +47,4 @@ Config file : C:\Users\sguclu\AppData\Local\Chocolatey\ChocolateyGui.exe_Url_oqq
         </ChocolateyGui.Properties.Settings>
     </userSettings>
 </configuration>
+```
