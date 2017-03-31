@@ -18,10 +18,10 @@ REM %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Exec
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR%\resources\install.ps1' %*"
 
 ::install Powershell V4 and Chocolatey GUI
-%ProgramFiles%\Chocolatey\bin\choco.exe install PowerShell -s %DIR%\resources -Y
-%ProgramFiles%\Chocolatey\bin\choco.exe install ChocolateyGUI -s %DIR%\resources -Y
+"%ProgramFiles%\Chocolatey\bin\choco.exe" install PowerShell -s %DIR%\resources -Y
+"%ProgramFiles%\Chocolatey\bin\choco.exe" install ChocolateyGUI -s %DIR%\resources -Y
 
 :: post-installation : feeders setup
-xcopy /Y %DIR%\resources\user.config %LOCALAPPDATA%\Chocolatey\ChocolateyGui.exe_Url_oqqrttjgsgsfj3psms1wjw4lcyeoz1us\0.13.2.0
-%ProgramFiles%\Chocolatey\bin\choco.exe source add --name YOUHOU
-%ProgramFiles%\Chocolatey\bin\choco.exe source remove --name Chocolatey
+xcopy /Y %DIR%\resources\user.config "%LOCALAPPDATA%\Chocolatey\ChocolateyGui.exe_Url_oqqrttjgsgsfj3psms1wjw4lcyeoz1us\0.13.2.0"
+"%ProgramFiles%\Chocolatey\bin\choco.exe" source add --name YOUHOU
+"%ProgramFiles%\Chocolatey\bin\choco.exe" source remove --name Chocolatey
