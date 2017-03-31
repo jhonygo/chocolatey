@@ -7,7 +7,7 @@
 :: PowerShell.4.0.20141001.nupkg
 
 SET DIR=%~dp0%
-SET ChocolateyInstall=c:\dev\Chocolatey
+SET ChocolateyInstall=%ProgramFiles%\Chocolatey
 SET chocolateyUseWindowsCompression=true
 SET chocolateyDownloadUrl=file://%DIR%/resources/chocolatey.nupkg
 
@@ -18,10 +18,10 @@ REM %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -Exec
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR%\resources\install.ps1' %*"
 
 ::install Powershell V4 and Chocolatey GUI
-c:\dev\Chocolatey\bin\choco.exe install PowerShell -s %DIR%\resources -Y
-c:\dev\Chocolatey\bin\choco.exe install ChocolateyGUI -s %DIR%\resources -Y
+%ProgramFiles%\Chocolatey\bin\choco.exe install PowerShell -s %DIR%\resources -Y
+%ProgramFiles%\Chocolatey\bin\choco.exe install ChocolateyGUI -s %DIR%\resources -Y
 
 :: post-installation : feeders setup
 xcopy /Y %DIR%\resources\user.config %LOCALAPPDATA%\Chocolatey\ChocolateyGui.exe_Url_oqqrttjgsgsfj3psms1wjw4lcyeoz1us\0.13.2.0
-c:\dev\Chocolatey\bin\choco.exe source add --name YOUHOU
-c:\dev\Chocolatey\bin\choco.exe source remove --name Chocolatey
+%ProgramFiles%\Chocolatey\bin\choco.exe source add --name YOUHOU
+%ProgramFiles%\Chocolatey\bin\choco.exe source remove --name Chocolatey
